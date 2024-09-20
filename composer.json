@@ -1,0 +1,6 @@
+{
+    "name": "acseo/sylius-ai-tools",
+    "description": "Use AI to improve Sylius experience",
+    "type": "library",
+    "license": "MIT"
+}
