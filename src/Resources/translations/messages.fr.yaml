@@ -1,0 +1,25 @@
+product:
+    update:
+        success: Produit mis à jour avec succès avec de nouvelles descriptions
+    not_found: Produit non trouvé
+
+sylius:
+    ui:
+        cancel: Annuler
+        description: Description
+        error_generating: Oups ! Quelque chose a mal tourné. Veuillez réessayer.
+        error_network: La réponse du réseau n'était pas correcte.
+        form:
+            image_label: Image
+            keywords_help: Veuillez entrer des mots-clés séparés par des virgules
+            keywords_label: Mots-clés
+            text_label: Texte
+        generate_description_from_pictures: Générer une description à partir d'images
+        generate_description_from_text: Générer une description à partir de texte
+        loading: Chargement...
+        meta_description: Description Meta
+        meta_information: Informations Meta
+        meta_keywords: Mots-clés Meta
+        no_results: Aucun résultat trouvé.
+        short_description: Courte description
+        validate: Valider

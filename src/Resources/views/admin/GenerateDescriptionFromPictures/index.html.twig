@@ -1,0 +1,72 @@
+<style>
+    .image_previews {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .img-wrapper {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 5px;
+        background-color: #f9f9f9;
+    }
+
+    .img-preview {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .remove-btn {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background-color: rgba(255, 0, 0, 0.7);
+        color: white;
+        border: none;
+        padding: 3px 8px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+
+    .remove-btn:hover {
+        background-color: rgba(255, 0, 0, 1);
+    }
+</style>
+
+{{ form_start(form, {
+    'action': path('sylius_admin_generate_description_from_pictures'),
+    'attr': {
+        'class': 'ui form',
+        'id': 'description_from_pictures_' ~ locale ~ '_form',
+        'enctype': 'multipart/form-data',
+    }
+}) }}
+    <div class="field">
+        {{ form_label(form.pictures) }}
+        {{ form_widget(form.pictures) }}
+        {{ form_widget(form.preloaded_images) }}
+        <div id="image_previews_{{ locale }}" class="image_previews"></div>
+    </div>
+    <div class="field">
+        {{ form_label(form.keywords) }}
+        {{ form_widget(form.keywords) }}
+        {{ form_help(form.keywords) }}
+    </div>
+    {{ form_row(form.locale) }}
+    {{ form_row(form.resource) }}
+    <button class="ui primary button" type="submit">
+        {{ 'sylius.ui.generate_description_from_pictures'|trans }}
+    </button>
+{{ form_end(form) }}
