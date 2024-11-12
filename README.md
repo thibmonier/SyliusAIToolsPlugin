@@ -91,3 +91,42 @@ When configuring the channel in the back-office (BO), it is necessary to add:
 - **Locales**: Add the languages supported or used by the channel.
 
 Ensure these settings are correctly configured for optimal channel integration.
+
+## Commands
+
+### `acseo:generate-product-descriptions`
+This command generates and updates product descriptions for all products in the system, using provided text and optional keywords.
+
+#### Usage
+
+##### Options:
+- **--locale=<locale>**: The locale to use for generating descriptions. The default locale is en (English).
+- **--text=<text>**: The text to be used for generating descriptions. This will be processed to create a description for each product.
+- **--keywords=<keywords>**: A comma-separated list of keywords that will be used to improve the description generation. For example: --keywords="keyword1, keyword2".
+
+##### Example
+
+```bash
+php bin/console acseo:generate-product-descriptions --locale=en --text="Example product description" --keywords="shirt, cotton, casual"
+```
+
+This will generate descriptions for all products in the system, using the provided text and keywords.
+
+### acseo:generate-product-descriptions-from-pictures
+This command generates and updates product descriptions for all products in the system, using provided pictures (URLs or file paths) and optional keywords.
+
+#### Usage
+
+##### Options:
+- **--locale=<locale>**: The locale to use for generating descriptions. The default locale is en (English).
+- **--pictures=<pictures>**: A comma-separated list of picture URLs or file paths that will be used to generate descriptions. Each image will be processed to derive relevant information for the descriptions.
+- **--keywords=<keywords>**: A comma-separated list of keywords to enhance the description generation. For example: --keywords="keyword1, keyword2".
+
+##### Example
+
+```bash
+php bin/console acseo:generate-product-descriptions-from-pictures --locale=fr --pictures="http://example.com/image1.jpg,http://example.com/image2.jpg" --keywords="dress, summer, casual"
+```
+
+This will generate descriptions for all products in the system, based on the provided images and keywords.
+

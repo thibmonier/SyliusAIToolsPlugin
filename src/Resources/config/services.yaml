@@ -34,3 +34,19 @@ services:
             $localeProvider: '@sylius.locale_provider'
         tags:
             - { name: 'twig.extension' }
+    
+    ACSEO\SyliusAITools\Command\GenerateDescriptionsFromTextCommand:
+        arguments:
+            $descriptionManager: '@ACSEO\SyliusAITools\Manager\DescriptionManager'
+            $productRepository: '@sylius.repository.product'
+            $entityManager: '@doctrine.orm.entity_manager'
+        tags:
+            - { name: 'console.command' }
+    
+    ACSEO\SyliusAITools\Command\GenerateDescriptionsFromPicturesCommand:
+        arguments:
+            $descriptionManager: '@ACSEO\SyliusAITools\Manager\DescriptionManager'
+            $productRepository: '@sylius.repository.product'
+            $entityManager: '@doctrine.orm.entity_manager'
+        tags:
+            - { name: 'console.command' }

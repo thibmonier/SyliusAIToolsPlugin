@@ -63,7 +63,7 @@ class ProductDescriptionFromPicturesFormType extends AbstractProductDescriptionF
         return array_map(function ($image) use ($virtualHost) {
             $imagePath = ltrim($image->getPath() ?? '', '/');
 
-            return \sprintf('%s/media/cache/sylius_small/%s', $virtualHost, $imagePath);
+            return \sprintf('%s/media/cache/resolve/sylius_shop_product_original/%s', $virtualHost, $imagePath);
         }, $product->getImages()->toArray());
     }
 }
