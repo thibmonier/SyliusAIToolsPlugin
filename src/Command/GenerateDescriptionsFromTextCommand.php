@@ -29,6 +29,7 @@ class GenerateDescriptionsFromTextCommand extends Command
     protected function configure(): void
     {
         $this
+            ->setName('acseo:generate-product-descriptions')
             ->setDescription('Generate and update product descriptions for all products.')
             ->setHelp('This command generates and updates product descriptions for all available products based on the given locale, text input, and keywords.')
             ->addOption('locale', null, InputOption::VALUE_OPTIONAL, 'The locale to use for generating descriptions (default is "en")', 'en')
