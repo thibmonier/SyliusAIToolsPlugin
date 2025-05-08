@@ -30,6 +30,7 @@ class GenerateDescriptionsFromPicturesCommand extends Command
     protected function configure(): void
     {
         $this
+            ->setName('acseo:generate-product-descriptions-from-pictures')
             ->setDescription('Generate and update product descriptions for all products using pictures.')
             ->setHelp('This command generates and updates product descriptions for all available products based on provided pictures and locale.')
             ->addOption('locale', null, InputOption::VALUE_OPTIONAL, 'The locale to use for generating descriptions (default is "en")', 'en')
